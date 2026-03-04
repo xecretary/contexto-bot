@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contexto Discord Activity</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>CONTEXTO</h1>
+      <div class="actions">
+        <!-- Optional extra actions like settings -->
+        <span>⋮</span>
+      </div>
+    </header>
+
+    <div class="stats">
+      <span class="game-number">GAME: <strong id="game-id">#---</strong></span>
+      <span class="guesses-count">GUESSES: <strong id="guess-count">0</strong></span>
+    </div>
+
+    <form id="guess-form" class="input-container">
+      <input type="text" id="guess-input" placeholder="type a word" autocomplete="off" autofocus>
+    </form>
+
+    <div id="guesses-container">
+      <!-- Guesses will be injected here -->
+    </div>
+  </div>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
