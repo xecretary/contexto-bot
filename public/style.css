@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+  background-color: #1a222c;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+#app {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.actions {
+  position: absolute;
+  right: 0;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.stats {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.stats strong {
+  font-size: 16px;
+}
+
+.input-container {
+  display: flex;
+  width: 100%;
+}
+
+#guess-input {
+  width: 100%;
+  background-color: #2a3441;
+  border: 2px solid #3b82f6;
+  border-radius: 6px;
+  padding: 12px 16px;
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+}
+
+#guess-input::placeholder {
+  color: #6c7889;
+}
+
+#guesses-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.guess-row {
+  display: flex;
+  align-items: center;
+  background-color: #232c38;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 48px;
+  position: relative;
+}
+
+.guess-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 6px;
+  z-index: 1;
+}
+
+/* Color definitions */
+.color-green { background-color: #12b886; }
+.color-yellow { background-color: #fcc419; }
+.color-orange { background-color: #f76707; }
+.color-red { background-color: #e03131; }
+
+.guess-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 16px;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.guess-word {
+  text-transform: lowercase;
+}
+
+.guess-distance {
+  font-size: 18px;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.guess-row.new {
+  animation: slideDown 0.3s ease forwards;
+}
